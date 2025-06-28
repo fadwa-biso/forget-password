@@ -14,6 +14,8 @@ import { NavbarComponent } from './components/specific/navbar/navbar.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { RegisterFormComponent } from './pages/register-form/register-form.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { CheckoutContainerComponent } from './components/specific/checkout-container/checkout-container.component';
 import { CheckoutFormComponent } from './components/shared/checkout-form/checkout-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -27,6 +29,7 @@ import { PaymentComponent } from './pages/payment/payment.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { WishlistButtonComponent } from './components/shared/wishlist-button/wishlist-button.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,8 @@ import { WishlistButtonComponent } from './components/shared/wishlist-button/wis
     ProductDetailComponent,
     RegisterFormComponent,
     LoginFormComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
     CheckoutContainerComponent,
     CheckoutFormComponent,
     HomeComponent,
@@ -60,7 +65,6 @@ import { WishlistButtonComponent } from './components/shared/wishlist-button/wis
     CommonModule,
     FormsModule,
     RouterModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

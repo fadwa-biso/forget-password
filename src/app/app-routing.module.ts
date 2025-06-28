@@ -5,6 +5,8 @@ import { ProductListComponent } from './components/specific/product-list/product
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { RegisterFormComponent } from './pages/register-form/register-form.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
@@ -14,6 +16,7 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { OrderConfirmationComponent } from './pages/order-confirmation/order-confirmation.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cart', component: CartpageComponent },
@@ -22,6 +25,8 @@ const routes: Routes = [
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'register', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'category/:type', component: CategoryComponent },
