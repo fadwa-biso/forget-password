@@ -1,0 +1,135 @@
+.about-container {
+  padding-top: 70px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-hero {
+  background: linear-gradient(rgba(147, 53, 62, 0.8), rgba(147, 53, 62, 0.8)),
+              url('https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover;
+  padding: 120px 0;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-family: 'Georgia', serif;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.our-story {
+  padding: 80px 0;
+  background-color: #FAF4E7;
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  color: #93353E;
+  margin-bottom: 30px;
+}
+
+.story-text p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.story-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.our-team {
+  padding: 80px 0;
+  background-color: #FAF4E7;
+}
+
+.our-team h2 {
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  color: #93353E;
+  margin-bottom: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.member-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #E1D8C9;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info h3 {
+  font-family: 'Georgia', serif;
+  color: #93353E;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  color: #93353E;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.member-bio {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .story-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .story-text h2 {
+    font-size: 2rem;
+  }
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}

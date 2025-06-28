@@ -1,0 +1,172 @@
+<div class="checkout-container">
+  <div class="container">
+    <div class="checkout-header">
+      <h1>Checkout</h1>
+      <div class="checkout-steps">
+        <div class="step active">
+          <span class="step-number">1</span>
+          <span class="step-label">Shipping</span>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <span class="step-label">Payment</span>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <span class="step-label">Confirmation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skeleton Loader -->
+    <div *ngIf="loading" class="checkout-content skeleton-loader">
+      <div class="checkout-form">
+        <div class="form-section">
+          <div class="skeleton skeleton-title"></div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="skeleton skeleton-label"></div>
+              <div class="skeleton skeleton-input"></div>
+            </div>
+            <div class="col-md-6">
+              <div class="skeleton skeleton-label"></div>
+              <div class="skeleton skeleton-input"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="skeleton skeleton-label"></div>
+              <div class="skeleton skeleton-input"></div>
+            </div>
+            <div class="col-md-6">
+              <div class="skeleton skeleton-label"></div>
+              <div class="skeleton skeleton-input"></div>
+            </div>
+          </div>
+          <div class="skeleton skeleton-label"></div>
+          <div class="skeleton skeleton-input"></div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="skeleton skeleton-label"></div>
+              <div class="skeleton skeleton-input"></div>
+            </div>
+            <div class="col-md-4">
+              <div class="skeleton skeleton-label"></div>
+              <div class="skeleton skeleton-input"></div>
+            </div>
+            <div class="col-md-4">
+              <div class="skeleton skeleton-label"></div>
+              <div class="skeleton skeleton-input"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skeleton skeleton-button"></div>
+      </div>
+    </div>
+
+    <!-- Actual Content -->
+    <div *ngIf="!loading" class="checkout-content">
+      <div class="row">
+        <div class="col-lg-8">
+          <form [formGroup]="checkoutForm" class="checkout-form">
+            <div class="form-section">
+              <h3>Shipping Information</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" class="form-control" formControlName="firstName" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" class="form-control" formControlName="lastName" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" class="form-control" formControlName="email" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" class="form-control" formControlName="phone" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Address *</label>
+                <input type="text" id="address" class="form-control" formControlName="address" />
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="city">City *</label>
+                    <input type="text" id="city" class="form-control" formControlName="city" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="zipCode">Zip Code *</label>
+                    <input type="text" id="zipCode" class="form-control" formControlName="zipCode" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="country">Governorate *</label>
+                    <select id="country" class="form-control" formControlName="country">
+                      <option value="">Select Governorate</option>
+                      <option value="cairo">Cairo</option>
+                      <option value="giza">Giza</option>
+                      <option value="alexandria">Alexandria</option>
+                      <option value="qalyubia">Qalyubia</option>
+                      <option value="sharqia">Sharqia</option>
+                      <option value="dakahlia">Dakahlia</option>
+                      <option value="beheira">Beheira</option>
+                      <option value="gharbia">Gharbia</option>
+                      <option value="monufia">Monufia</option>
+                      <option value="kafr_elsheikh">Kafr El-Sheikh</option>
+                      <option value="fayoum">Fayoum</option>
+                      <option value="bani_suef">Bani Suef</option>
+                      <option value="minya">Minya</option>
+                      <option value="assiut">Assiut</option>
+                      <option value="sohag">Sohag</option>
+                      <option value="qena">Qena</option>
+                      <option value="aswan">Aswan</option>
+                      <option value="luxor">Luxor</option>
+                      <option value="red_sea">Red Sea</option>
+                      <option value="new_valley">New Valley</option>
+                      <option value="matrouh">Matrouh</option>
+                      <option value="north_sinai">North Sinai</option>
+                      <option value="south_sinai">South Sinai</option>
+                      <option value="port_said">Port Said</option>
+                      <option value="ismailia">Ismailia</option>
+                      <option value="suez">Suez</option>
+                      <option value="damietta">Damietta</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="btn-place-order"
+              [routerLink]="['/checkout/payment']"
+              [disabled]="checkoutForm.invalid"
+            >
+              Continue to Payment
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

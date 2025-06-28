@@ -1,0 +1,31 @@
+<button 
+  class="wishlist-btn" 
+  [class]="'wishlist-btn-' + size"
+  [class.active]="isInWishlist"
+  [disabled]="loading"
+  (click)="toggleWishlist()"
+  [title]="isInWishlist ? 'Remove from wishlist' : 'Add to wishlist'">
+  
+  <svg 
+    *ngIf="!loading" 
+    width="20" 
+    height="20" 
+    viewBox="0 0 24 24" 
+    [attr.fill]="isInWishlist ? 'currentColor' : 'none'"
+    stroke="currentColor" 
+    stroke-width="2">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+  
+  <svg 
+    *ngIf="loading" 
+    class="spinner" 
+    width="20" 
+    height="20" 
+    viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+      <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+</button>

@@ -1,0 +1,73 @@
+.wishlist-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #93353E;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-btn:hover {
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.wishlist-btn.active {
+  background: #93353E;
+  color: white;
+}
+
+.wishlist-btn.active:hover {
+  background: #7A2B33;
+}
+
+.wishlist-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.wishlist-btn-small {
+  width: 32px;
+  height: 32px;
+}
+
+.wishlist-btn-small svg {
+  width: 16px;
+  height: 16px;
+}
+
+.wishlist-btn-medium {
+  width: 40px;
+  height: 40px;
+}
+
+.wishlist-btn-medium svg {
+  width: 20px;
+  height: 20px;
+}
+
+.wishlist-btn-large {
+  width: 48px;
+  height: 48px;
+}
+
+.wishlist-btn-large svg {
+  width: 24px;
+  height: 24px;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

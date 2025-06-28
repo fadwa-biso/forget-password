@@ -1,0 +1,103 @@
+<nav class="navbar">
+  <div class="nav-container w-100">
+    <div class="nav-logo">
+      <a routerLink="/">
+        <h2>Victorian Elegance</h2>
+      </a>
+    </div>
+
+    
+    <!-- 🔥 NAVIGATION MENU -->
+    <ul class="nav-menu sidebar-menu " [class.active]="isMenuOpen">
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link" routerLinkActive="active">Home</a>
+      </li>
+      <li
+      class="nav-item dropdown"
+      (mouseenter)="showProductsDropdown = true"
+      (mouseleave)="showProductsDropdown = false"
+      >
+      <a routerLink="/products" class="nav-link" routerLinkActive="active">
+        Products
+        <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+          <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+      <div class="dropdown-menu" [class.show]="showProductsDropdown">
+        <a [routerLink]="['/products','category', 'bedroom']" class="dropdown-item">Bedroom</a>
+        <a [routerLink]="['/products','category', 'tables']" class="dropdown-item">Tables</a>
+        <a [routerLink]="['/products','category', 'chairs']" class="dropdown-item">Chairs</a>
+        <a [routerLink]="['/products','category', 'accessories']" class="dropdown-item">Accessories</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/aboutus" class="nav-link" routerLinkActive="active">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/contactus" class="nav-link" routerLinkActive="active">Contact Us</a>
+    </li>
+   <li class="nav-item mobile-only" *ngIf="!loggedIn">
+  <a routerLink="/login" class="nav-link">Login</a>
+</li>
+<li class="nav-item mobile-only" *ngIf="loggedIn">
+  <button class="logout-btn nav-link" (click)="logout()">Logout</button>
+</li>
+  </ul>
+  
+  <!-- 🔥 ACTIONS -->
+  <div class="nav-actions">
+    <!-- Search -->
+    <div class="search-container">
+      <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      placeholder="Search..."
+      class="search-input"
+      (keyup.enter)="onSearch()"
+      />
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" (click)="onSearch()">
+        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
+        <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" />
+      </svg>
+    </div>
+    
+    <!-- Wishlist -->
+    <div class="wishlist-container">
+      <a [routerLink]="['/wishlist']">
+        <svg class="wishlist-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+          stroke="currentColor"
+          stroke-width="2"
+          />
+        </svg>
+      </a>
+      </div>
+
+      <!-- Cart -->
+      <div class="cart-container">
+        <a [routerLink]="['/cart']">
+          <img class="cart-icon" width="24" height="24" src="assets/icons/cart.svg" alt="" />
+          <span class="cart-count" *ngIf="(cartItemCount$ | async) as count">{{ count }}</span>
+        </a>
+      </div>
+
+      <!-- Login / Logout -->
+      <div class="btn-login" *ngIf="!loggedIn">
+        <button [routerLink]="['/login']">Login</button>
+      </div>
+      <div class="btn-login navbar-user-actions" *ngIf="loggedIn">
+        <span class="navbar-username">
+          <i class="fas fa-user"></i> {{ username }}
+        </span>
+        <button (click)="logout()" class="logout-btn">Logout</button>
+      </div>
+    </div>
+    <!-- 🔥 HAMBURGER ICON -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>

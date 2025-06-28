@@ -1,0 +1,111 @@
+<div class="home-container">
+  <section class="hero-section">
+    <div class="hero-slider">
+      <div class="slide"
+           [class.active]="currentSlide === 0"
+           style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
+        <div class="slide-overlay"></div>
+      </div>
+      <div class="slide"
+           [class.active]="currentSlide === 1"
+           style="background-image: url('https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
+        <div class="slide-overlay"></div>
+      </div>
+      <div class="slide"
+           [class.active]="currentSlide === 2"
+           style="background-image: url('https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
+        <div class="slide-overlay"></div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Victorian Elegance Furniture</h1>
+        <!-- <p>Discover our exquisite collection of handcrafted Victorian furniture that brings classic sophistication to your home. Each piece tells a story of craftsmanship and timeless beauty.</p> -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, aperiam hic ut praesentium necessitatibus aspernatur!</p>
+        <button class="cta-button" (click)="navigateToProducts()">Explore Collection</button>
+      </div>
+    </div>
+
+    <div class="slider-controls">
+      <button class="slider-btn prev-btn" (click)="previousSlide()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="slider-btn next-btn" (click)="nextSlide()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="slider-dots">
+      <span class="dot"
+            [class.active]="currentSlide === 0"
+            (click)="goToSlide(0)"></span>
+      <span class="dot"
+            [class.active]="currentSlide === 1"
+            (click)="goToSlide(1)"></span>
+      <span class="dot"
+            [class.active]="currentSlide === 2"
+            (click)="goToSlide(2)"></span>
+    </div>
+  </section>
+
+
+  <app-explore-collection></app-explore-collection>
+
+  <section class="featured-products">
+    <div class="container">
+      <h2>Featured Pieces</h2>
+      <div class="products-grid">
+        <div class="product-card" *ngFor="let product of featuredProducts">
+          <div class="product-image">
+            <img [src]="product.thumbnail" [alt]="product.name">
+            <div class="product-overlay">
+              <a [routerLink]="['/products', product.id]">
+              <button class="quick-view-btn">Quick View</button>
+              </a>
+              <button class="add-to-cart-btn" (click)="addToCart(product)">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>{{product.name}}</h3>
+            <p class="product-price">£{{product.price}}</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count">({{product.ratings.length}})</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Why Choose Us -->
+<section class="why-choose-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Choose Victorian Elegance</h2>
+      <p>Experience the difference of authentic craftsmanship and timeless design</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-item" *ngFor="let feature of features">
+
+ <div class="feature-icon">
+  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ng-container *ngFor="let path of feature.paths">
+      <path [attr.d]="path.d" stroke="white" [attr.stroke-width]="path.strokeWidth" fill="none" />
+    </ng-container>
+  </svg>
+</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>

@@ -1,0 +1,57 @@
+<div class="about-container">
+  <section class="about-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Our Story</h1>
+        <p>Preserving the elegance and craftsmanship of the Victorian era for modern homes</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-story">
+    <div class="container">
+      <div class="story-content">
+        <div class="story-text">
+          <h2>A Legacy of Victorian Excellence</h2>
+          <p>Founded in 1985 by antique enthusiast Margaret Thornfield, Victorian Elegance began as a small
+             collection of carefully curated pieces discovered in English country estates. What started as a
+             passion for preserving history has grown into one of the UK's most trusted sources for authentic
+             Victorian furniture.</p>
+
+          <p>Our journey spans over three decades of dedicated sourcing, restoration, and curation. We travel
+             across Britain and Europe, building relationships with estate agents, private collectors, and
+             auction houses to find the finest examples of Victorian craftsmanship.</p>
+
+          <p>Every piece in our collection tells a story—from grand dining tables that once hosted elaborate
+             dinner parties to intimate writing desks where love letters were penned. We believe that furniture
+             should not merely fill a space, but enrich lives with beauty, history, and meaning.</p>
+        </div>
+        <div class="story-image">
+          <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600"
+               alt="Victorian Interior">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team -->
+  <section class="our-team">
+    <div class="container">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member" *ngFor="let member of teamMembers">
+          <div class="member-image">
+            <img [src]="member.image" [alt]="member.name">
+          </div>
+          <div class="member-info">
+            <h3>{{member.name}}</h3>
+            <p class="member-role">{{member.role}}</p>
+            <p class="member-bio">{{member.bio}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div>

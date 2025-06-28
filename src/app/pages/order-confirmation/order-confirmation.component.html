@@ -1,0 +1,68 @@
+<!-- <div class="checkout-container">
+  <div class="container">
+    <div class="checkout-header">
+      <h1>Order Confirmation</h1>
+      <div class="checkout-steps">
+        <div class="step active">
+          <span class="step-number">1</span>
+          <span class="step-label">Shipping</span>
+        </div>
+        <div class="step active">
+          <span class="step-number">2</span>
+          <span class="step-label">Payment</span>
+        </div>
+        <div class="step active">
+          <span class="step-number">3</span>
+          <span class="step-label">Confirmation</span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="loading-spinner">
+      <p>Loading order details...</p>
+    </div>
+
+    <div *ngIf="error" class="error-message">
+      <p>{{ error }}</p>
+      <button (click)="navigateToHome()" class="btn-continue">Go to Homepage</button>
+    </div>
+
+    <div *ngIf="order && !loading && !error" class="order-success">
+      <div class="success-content">
+        <div class="success-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h2>Thank you for your order!</h2>
+        <p>Your order <strong>#{{ order?.id }}</strong> has been placed successfully.</p>
+        <p>We've sent a confirmation email to <strong>{{ order?.shippingAddress?.address }}</strong>.</p>
+        
+        <div class="order-details-summary">
+            <h4>Order Summary</h4>
+            <div class="summary-items">
+              <div class="summary-item" *ngFor="let item of order.items">
+                <div class="item-info">
+                  <img [src]="item.productId" [alt]="item.productId">
+                  <div class="item-details">
+                    <h4>{{ item.productId }}</h4>
+                    <p>Qty: {{ item.quantity }}</p>
+                  </div>
+                </div>
+                <div class="item-price">£{{ (item.price * item.quantity).toFixed(2) }}</div>
+              </div>
+            </div>
+            <div class="summary-totals">
+              <div class="summary-row total">
+                <span>Total:</span>
+                <span>£{{ order?.total?.toFixed(2) }}</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="success-actions">
+          <button (click)="navigateToHome()" class="btn-continue">Continue Shopping</button>
+          <button (click)="navigateToOrders()" class="btn-orders">View My Orders</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

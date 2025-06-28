@@ -1,0 +1,113 @@
+ main {
+      min-height: calc(100vh - 70px);
+    }
+
+    .site-footer {
+      background-color: #93353E;
+      color: #E1D8C9;
+    }
+
+    .footer-container {
+      max-width: 100%;
+      margin: 0 0;
+      padding: 20px 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 7%;
+    }
+
+    .footer-section h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #E1D8C9;
+    }
+
+    .footer-section h4 {
+      font-family: 'Georgia', serif;
+      margin-bottom: 15px;
+      color: #E1D8C9;
+    }
+
+    .footer-section p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-section ul li a {
+      color: #E1D8C9;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      opacity: 1;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(225, 216, 201, 0.3);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #E1D8C9;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }

@@ -1,0 +1,105 @@
+<div class="auth-container">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-xl-5">
+        <div class="auth-card">
+          <div class="auth-header">
+            <div
+              *ngIf="welcomeName"
+              class="alert alert-success welcome-message"
+            >
+              Hello, {{ welcomeName }}! Please log in to continue.
+            </div>
+            <h2 class="auth-title">Welcome Back</h2>
+            <p class="auth-subtitle">Sign in to your account</p>
+          </div>
+
+          <div class="auth-body">
+            <div *ngIf="errorMsg" class="alert alert-danger mb-3">
+              {{ errorMsg }}
+            </div>
+            <form
+              class="auth-form"
+              [formGroup]="loginForm"
+              (ngSubmit)="onSubmit()"
+            >
+              <div class="form-floating mb-4">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="Email Address"
+                  formControlName="email"
+                />
+                <label for="loginEmail" class="auth-label">
+                  <i class="fas fa-envelope me-2"></i>Email Address
+                </label>
+              </div>
+
+              <div class="form-floating mb-4 position-relative">
+                <input
+                  [type]="showPassword ? 'text' : 'password'"
+                  formControlName="password"
+                  class="form-control"
+                  id="loginPassword"
+                  placeholder="Password"
+                />
+                <label for="loginPassword" class="auth-label">
+                  <i class="fas fa-lock me-2"></i>Password
+                </label>
+
+                <button
+                  type="button"
+                  class="toggle-password-btn"
+                  (click)="togglePasswordVisibility()"
+                >
+                  {{ showPassword ? "Hide" : "Show" }}
+                </button>
+              </div>
+
+              <div
+                class="d-flex justify-content-between align-items-center mb-4"
+              >
+                <div class="form-check">
+                  <input
+                    class="form-check-input custom-checkbox"
+                    type="checkbox"
+                    id="rememberMe"
+                  />
+                  <label
+                    class="form-check-label custom-checkbox-label"
+                    for="rememberMe"
+                    >Remember me</label
+                  >
+                </div>
+                <a routerLink="/forgot-password" class="auth-link"
+                  >Forgot Password?</a
+                >
+              </div>
+
+              <div class="d-grid mb-4">
+                <button
+                  type="submit"
+                  class="btn auth-btn-primary"
+                  [disabled]="loading || loginForm.invalid"
+                >
+                  <span>Sign In</span>
+                  <span *ngIf="loading"
+                    ><i class="fas fa-spinner fa-spin"></i
+                  ></span>
+                </button>
+              </div>
+
+              <div class="auth-footer text-center">
+                <p>
+                  Don't have an account?
+                  <a routerLink="/register" class="auth-link">Create Account</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+ .row.justify-content-center{
+  background-color:#FAF4E7;
+ }
+.auth-container {
+  min-height: 60vh;
+  padding: 4rem 0;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF4E7;
+}
+
+.auth-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ede8e1;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+.auth-header {
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #FAF4E7;
+}
+
+.auth-title {
+  color: #7A2B33;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-shadow: none;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: #93353E;
+  font-size: 1.1rem;
+}
+
+.auth-body {
+  padding: 3rem;
+}
+
+.auth-body input[type="email"],
+.auth-body input[type="password"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+.form-floating.position-relative {
+  position: relative;
+}
+
+.form-floating .form-control:focus {
+  border-color: #93353E;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #93353E;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  padding: 0;
+  z-index: 2;
+}
+
+.toggle-password-btn:hover {
+  text-decoration: underline;
+}
+
+.auth-link {
+  color: #93353E;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
+.auth-link:hover {
+  color: #7A2B33;
+  text-decoration: underline;
+}
+
+.auth-btn-primary {
+  background-color: #93353E;
+  color: white;
+  border: none;
+  padding: 16px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(147, 53, 62, 0.2);
+}
+
+.auth-btn-primary:hover {
+  background-color: #7A2B33;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(147, 53, 62, 0.3);
+}
+
+.toggle-password-btn {
+  background: transparent;
+  border: none;
+  color: #93353E;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.toggle-password-btn:hover {
+  color: #7A2B33;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

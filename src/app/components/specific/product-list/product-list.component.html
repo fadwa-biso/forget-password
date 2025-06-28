@@ -1,0 +1,24 @@
+<div class="container my-4">
+  <h2 class="mb-4">Products</h2>
+
+  <div *ngIf="loading">
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let skeleton of [1,2,3,4,5,6]">
+        <div class="skeleton-card p-3 rounded shadow-sm">
+          <div class="skeleton skeleton-image mb-2"></div>
+          <div class="skeleton skeleton-title mb-1"></div>
+          <div class="skeleton skeleton-text mb-1" style="width: 60%;"></div>
+          <div class="skeleton skeleton-price" style="width: 40%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <div class="row" *ngIf="!loading">
+    <div *ngFor="let product of products" class="col-md-4 mb-3">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>

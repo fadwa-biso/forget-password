@@ -1,0 +1,76 @@
+<!-- <div *ngIf="categoryType === 'bedroom'" style="padding: 200px;">
+    <div >
+        <div *ngFor="let product of product" class="product-card">
+  <h3>{{ product.name }}</h3>
+  <p>Category: {{ product.category }}</p>
+  <p>Price: {{ product.price }} EGP</p>
+</div>
+    </div>
+</div> -->
+
+<!-- <div *ngIf="categoryType === 'bedroo'"><div class="product-card" *ngIf="product?.category === 'bedroom'">
+<div class="product-card" *ngIf="product">
+  <div class="product-image">
+    <a [routerLink]="['/products', product.id]">
+      <img [src]="product.thumbnail" [alt]="product.name" />
+    </a>
+    <div class="product-overlay">
+      <button class="quick-view-btn" [routerLink]="['/products', product.id]">
+        Quick View
+      </button> -->
+      <!-- <button class="add-to-cart-btn" (click)="addToCart()">Add to Cart</button> -->
+    <!-- </div>
+  </div>
+  <div class="product-info">
+    <a
+      [routerLink]="['/products', product.id]"
+      class="text-decoration-none text-dark"
+    >
+      <h3>{{ product.name }}</h3>
+    </a>
+    <p class="product-price">£{{ product.price }}</p>
+    <div class="product-rating">
+      <span class="stars">★★★★★</span> -->
+      <!-- <span class="rating-count" *ngIf="product.reviews">({{product.reviews}})</span> -->
+    <!-- </div>
+  </div>
+</div>
+
+</div></div>
+<div *ngIf="categoryType === 'dining-room'">محتوى الليفنج روم</div> -->
+<!-- <div *ngIf="categoryType === 'accsessories'">محتوى الليفنج روم</div> -->
+<div style="padding-top: 100px;"></div>
+<div class="product-list">
+    <div *ngIf="products.length > 0; else noProducts" class="all-products-wrapper">
+      <div *ngFor="let product of products" class="product-card">
+        <div class="product-image">
+          <a [routerLink]="['/products', product.id]">
+            <img [src]="product.thumbnail" [alt]="product.name" />
+          </a>
+          <div class="product-overlay">
+            <button class="quick-view-btn" [routerLink]="['/products', product.id]">
+              Quick View
+            </button>
+            <button class="add-to-cart-btn" (click)="addToCart()">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <a
+            [routerLink]="['/products', product.id]"
+            class="text-decoration-none text-dark"
+          >
+            <h3>{{ product.name }}</h3>
+          </a>
+          <p class="product-price">£{{ product.price }}</p>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <ng-template #noProducts>
+      <p>No products found in this category.</p>
+    </ng-template>
+</div>
+

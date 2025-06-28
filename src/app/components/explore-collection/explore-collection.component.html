@@ -1,0 +1,19 @@
+<section class="featured-categories">
+  <div class="container">
+    <h2>Explore Our Collections</h2>
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <div class="categories-grid" *ngIf="!loading && !error">
+      <div class="category-card" *ngFor="let category of categories">
+        <a [routerLink]="['/products/category', category.name]">
+          <img [src]="category.image || 'assets/images/default-category.webp'" [alt]="category.name">
+          <div class="category-overlay">
+            <h3>{{category.name}}</h3>
+            <p>{{category.description}}</p>
+            <a [routerLink]="['/products/category', category.name]" class="category-link">Explore</a>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

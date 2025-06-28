@@ -1,0 +1,5 @@
+<app-checkout-form (submitForm)="handleSubmit($event)"></app-checkout-form>
+<div *ngIf="fawryRef">
+  <p>Use this number to pay at the nearest Fawry machine.</p>
+  <strong>{{ fawryRef }}</strong>
+</div>

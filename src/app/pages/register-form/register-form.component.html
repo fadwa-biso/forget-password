@@ -1,0 +1,167 @@
+<div class="auth-container">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <!-- Registration Card -->
+      <div class="col-lg-8 col-xl-7">
+        <div class="auth-card">
+          <div class="auth-header">
+            <h2 class="auth-title">Create Account</h2>
+            <p class="auth-subtitle">Join our amazing community today</p>
+          </div>
+
+          <div class="auth-body">
+            <div *ngIf="errorMsg" class="alert alert-danger mb-3">
+              {{ errorMsg }}
+            </div>
+            <form
+              class="auth-form"
+              [formGroup]="registerForm"
+              (ngSubmit)="onSubmit()"
+            >
+              <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      placeholder="First Name"
+                      formControlName="firstName"
+                    />
+                    <label for="firstName" class="auth-label">
+                      <i class="fas fa-user me-2"></i>First Name
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName"
+                      placeholder="Last Name"
+                      formControlName="lastName"
+                    />
+                    <label for="lastName" class="auth-label">
+                      <i class="fas fa-user me-2"></i>Last Name
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email Address"
+                    formControlName="email"
+                  />
+                  <label for="email" class="auth-label">
+                    <i class="fas fa-envelope me-2"></i>Email Address
+                  </label>
+                </div>
+              </div>
+
+              <div class=" mb-4">
+                  <div class="form-floating position-relative">
+                    <input
+                      [type]="showPassword ? 'text' : 'password'"
+                      class="form-control"
+                      id="password"
+                      placeholder="Password"
+                      formControlName="password"
+                    />
+                    <label for="password" class="auth-label">
+                      <i class="fas fa-lock me-2"></i>Password
+                    </label>
+                    <button
+                      type="button"
+                      class="toggle-password-btn"
+                      (click)="togglePasswordVisibility('password')"
+                    >
+                      {{ showPassword ? "Hide" : "Show" }}
+                    </button>
+                  </div>
+                  <div class="form-floating position-relative">
+                    <input
+                      [type]="showConfirmPassword ? 'text' : 'password'"
+                      class="form-control"
+                      id="confirmPassword"
+                      placeholder="Confirm Password"
+                      formControlName="confirmPassword"
+                    />
+
+                    <label for="confirmPassword" class="auth-label">
+                      <i class="fas fa-lock me-2"></i>Confirm Password
+                    </label>
+                    <button
+                      type="button"
+                      class="toggle-password-btn"
+                      (click)="togglePasswordVisibility('confirmPassword')"
+                    >
+                      {{ showConfirmPassword ? "Hide" : "Show" }}
+                    </button>
+                  </div>
+              </div>
+
+              <div class="mb-5">
+                <div class="custom-checkbox-container mb-3">
+                  <input
+                    class="form-check-input custom-checkbox"
+                    type="checkbox"
+                    id="terms"
+                    formControlName="terms"
+                  />
+                  <label class="custom-checkbox-label" for="terms">
+                    I agree to the <a class="auth-link">Terms of Service</a> and
+                    <a class="auth-link">Privacy Policy</a>
+                  </label>
+                </div>
+                <!-- <div class="custom-checkbox-container">
+                  <input
+                    class="custom-checkbox"
+                    type="checkbox"
+                    id="newsletter"
+                    formControlName="newsletter"
+                  />
+                  <label class="custom-checkbox-label" for="newsletter">
+                    Subscribe to newsletter for updates and exclusive offers
+                  </label>
+                </div> -->
+              </div>
+
+              <div class="d-grid mb-4">
+                <button
+                  type="submit"
+                  class="auth-btn auth-btn-primary"
+                  [disabled]="loading || registerForm.invalid"
+                >
+                  <span class="btn-content" *ngIf="!loading">
+                    <i class="fas fa-user-plus me-2"></i>Create My Account
+                  </span>
+                  <div class="btn-loading" *ngIf="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                  </div>
+                </button>
+              </div>
+
+              <div class="auth-footer text-center">
+                <p>
+                  Already have an account?
+                  <a
+                    routerLink="/login"
+                    class="auth-link"
+                    style="cursor: pointer"
+                    >Sign In</a
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

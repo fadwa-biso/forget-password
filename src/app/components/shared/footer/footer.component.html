@@ -1,0 +1,38 @@
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Victorian Elegance Furniture</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem quam, nobis animi saepe aliquam sequi.</p>
+
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a routerLink="/home">Home</a></li>
+              <li><a routerLink="/products">Products</a></li>
+              <li><a routerLink="/aboutus">About Us</a></li>
+              <li><a routerLink="/contactus">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Categories</h4>
+            <ul>
+              <li><a [routerLink]="['/products','category', 'bedroom']">Bedroom</a></li>
+              <li><a [routerLink]="['/products','category', 'tables']">Tables</a></li>
+              <li><a [routerLink]="['/products','category', 'chairs']">Chairs</a></li>
+              <li><a [routerLink]="['/products','category', 'accessories']">Accessories</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p><img class="footer-icon" width="24" height="24" src="assets/icons/location.svg" alt=""> ITI El-Arish </p>
+            <p><img class="footer-icon" width="24" height="24" src="assets/icons/phone.svg" alt=""> +44 20 7123 4567</p>
+            <p><img class="footer-icon" width="24" height="24" src="assets/icons/mail.svg" alt=""> info&#64;victorianelegance.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>

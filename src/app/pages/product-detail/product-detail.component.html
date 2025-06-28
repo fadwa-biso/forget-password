@@ -1,0 +1,82 @@
+<div class="product-detail-container shadow rounded p-4" *ngIf="loading">
+  <div class="container">
+    <div class="product-detail-card">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="product-image-gallery text-center">
+            <div class="skeleton skeleton-image"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="product-details-content">
+            <div class="skeleton skeleton-title mb-3"></div>
+            <div class="skeleton skeleton-text mb-2" style="width: 50%;"></div>
+            <div class="skeleton skeleton-stars mb-2" style="width: 100px;"></div>
+            <div class="skeleton skeleton-price mb-3" style="width: 80px;"></div>
+            <div class="skeleton skeleton-description mb-4" style="height: 60px;"></div>
+
+            <div class="product-actions d-flex align-items-center gap-2">
+              <div class="quantity-selector d-flex align-items-center border rounded p-1">
+                <div class="skeleton skeleton-quantity" style="width: 120px; height: 32px;"></div>
+              </div>
+              <div class="skeleton skeleton-button" style="width: 100px; height: 38px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="product-detail-container" *ngIf="!loading && product">
+  <div class="container">
+    <div class="product-detail-card">
+      <div class="row g-0">
+        <div class="col-lg-6">
+          <div class="product-image-gallery">
+            <img
+              *ngIf="product.images && product.images.length > 0"
+              [src]="product.images[0]"
+              class="main-product-image"
+              [alt]="product.name"
+            />
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="product-details-content">
+            <h1 class="product-title">{{ product.name }}</h1>
+            <p class="product-category">{{ product.category }}</p>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+            </div>
+            <p class="product-price">£{{ product.price }}</p>
+            <p class="product-description">{{ product.description }}</p>
+
+            <div class="product-actions">
+              <!-- <div class="quantity-selector">
+                <button class="quantity-btn minus">-</button>
+                <input type="text" class="quantity-input" value="1" />
+                <button class="quantity-btn plus">+</button>
+              </div> -->
+              <button class="add-to-cart-btn" (click)="addToCart()">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <!-- *ngIf="relatedProducts?.length > 0" -->
+    <div class="related-products-section">
+      <h2>You Might Also Like</h2>
+      <div class="products-grid" *ngIf="relatedProducts.length > 0">
+        <app-product-card
+          *ngFor="let relatedProduct of relatedProducts"
+          [product]="relatedProduct"
+        ></app-product-card>
+      </div>
+    </div>
+  </div>
+</div>
